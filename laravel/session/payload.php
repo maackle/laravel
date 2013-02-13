@@ -246,6 +246,17 @@ class Payload {
 	}
 
 	/**
+	 * Get the session ID.
+	 *
+	 * This is useful when you can't use cookies and need to keep track of the session ID yourself.
+	 *
+	 * @return string
+	 */
+	public function id() {
+		return $this->session['id'];
+	}
+	
+	/**
 	 * Get the CSRF token that is stored in the session data.
 	 *
 	 * @return string

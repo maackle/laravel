@@ -83,6 +83,21 @@ return array(
 
 	/*
 	|--------------------------------------------------------------------------
+	| Parameter Name for Cookie-less method
+	|--------------------------------------------------------------------------
+	|
+	| Sometimes you can't use cookies, and need to keep track of the session
+	| manually.  In that case, you can store the session ID client-side and 
+	| send it back on each request.  If Laravel detects a session cookie, it
+	| will use that, but otherwise it will check Input for the key defined
+	| here, and use that value as the session ID.
+	|
+	*/
+
+	'parameter_name' => 'laravel_session',
+
+	/*
+	|--------------------------------------------------------------------------
 	| Session Cookie Path
 	|--------------------------------------------------------------------------
 	|

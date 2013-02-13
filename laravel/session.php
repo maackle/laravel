@@ -32,7 +32,8 @@ class Session {
 	{
 		static::start(Config::get('session.driver'));
 
-		static::$instance->load(Cookie::get(Config::get('session.cookie')));
+		$session_id = Cookie::get(Config::get('session.cookie')) | Input::get(Config::get('session.parameter_name'));
+		static::$instance->load($session_id ? $session_id : NULL);
 	}
 
 	/**
